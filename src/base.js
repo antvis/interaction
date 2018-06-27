@@ -1,5 +1,5 @@
 // const Global = require('../global');
-const G = require('@antv/g');
+const G = require('@antv/g/src');
 const EventUtil = require('@antv/util/src/event');
 const DomUtil = G.DomUtil;
 const CommonUtil = G.CommonUtil;
