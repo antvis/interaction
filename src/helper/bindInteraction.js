@@ -1,4 +1,4 @@
-const G = require('@antv/g');
+const G = require('@antv/g/src');
 const CommonUtil = G.CommonUtil;
 
 function bindInteraction(Lib, View) {
