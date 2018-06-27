@@ -12,7 +12,7 @@ class Zoom extends Interaction {
   getDefaultCfg() {
     const cfg = super.getDefaultCfg();
     return Util.mix({}, cfg, {
-      processingEvent: 'mousewheel',
+      processEvent: 'mousewheel',
       type: DEFAULT_TYPE,
       stepRatio: 0.05,
       stepByField: {},
