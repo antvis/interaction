@@ -1,10 +1,7 @@
-// const Global = require('../global');
 const G = require('@antv/g/src');
 const EventUtil = require('@antv/util/src/event');
 const DomUtil = G.DomUtil;
 const CommonUtil = G.CommonUtil;
-// const View = require('../chart/view');
-// const G2 = require('../core.js');
 
 const assign = CommonUtil.assign;
 
@@ -69,7 +66,7 @@ class Interaction {
     const me = this;
     const defaultCfg = me.getDefaultCfg();
     assign(me, defaultCfg, cfg);
-    me.view = view;
+    me.view = me.chart = view;
     me.canvas = view.get('canvas');
     me._bindEvents();
   }

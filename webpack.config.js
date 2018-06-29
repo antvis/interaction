@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    library: 'interaction',
+    library: 'Interaction',
     libraryTarget: 'umd',
     path: resolve(__dirname, 'build/')
   },

@@ -1,5 +1,5 @@
 
-const Util = require('@antv/util');
+const Util = require('./util');
 const Interaction = require('./base');
 // const G2 = require('../core.js');
 
@@ -115,8 +115,5 @@ class Drag extends Interaction {
     view.repaint();
   }
 }
-
-// G2.registerInteraction('drag', Drag);
-// G2.registerInteraction('Drag', Drag);
 
 module.exports = Drag;

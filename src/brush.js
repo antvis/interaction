@@ -1,5 +1,5 @@
 
-const Util = require('@antv/util');
+const Util = require('./util');
 const Interaction = require('./base');
 // const G2 = require('../core.js');
 
