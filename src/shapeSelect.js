@@ -1,6 +1,14 @@
 const Util = require('./util');
 const Interaction = require('./base');
 
+function getOriginalAttrs(attrs, styles) {
+  const origin = {};
+  for (const style in styles) {
+    origin[style] = attrs[style];
+  }
+  return origin;
+}
+
 class Select extends Interaction {
   getDefaultCfg() {
     const defaultCfg = super.getDefaultCfg();
@@ -43,23 +51,24 @@ class Select extends Interaction {
       self.reset(); // 允许取消选中
     } else { // 未被选中
       const { selectStyle, unSelectStyle } = self;
-
-      if (!selectedShape.get('_originAttrs')) {
-        const originAttrs = Object.assign({}, selectedShape.attr());
-        selectedShape.set('_originAttrs', originAttrs);
-      }
-
-      selectedShape.attr(Object.assign({}, selectedShape.get('_originAttrs'), selectStyle));
+      // 获取选中效果对应的本来效果,保存下来
+      const originAttrs = getOriginalAttrs(selectedShape.attr(), selectedShape);
+      selectedShape.set('_originAttrs', originAttrs);
+      selectedShape.attr(selectStyle);
 
       Util.each(unSelectedShapes, child => {
-        if (!child.get('_originAttrs')) {
-          const originAttrs = Object.assign({}, child.attr());
-          child.set('_originAttrs', originAttrs);
-        } else {
-          child.attr(child.get('_originAttrs'));
+        let originAttrs = child.get('_originAttrs');
+        // 先恢复到默认状态下
+        if (originAttrs) {
+          child.attr(originAttrs);
         }
         child.set('_selected', false);
-        unSelectStyle && child.attr(Object.assign({}, child.get('_originAttrs'), unSelectStyle));
+        // 保存未选中效果对应的原始效果
+        if (unSelectStyle) {
+          originAttrs = getOriginalAttrs(child.attr(), unSelectStyle);
+          child.set('_originAttrs', originAttrs);
+          child.attr(unSelectStyle);
+        }
       });
 
       selectedShape.set('_selected', true);
