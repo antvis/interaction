@@ -91,7 +91,7 @@ class Select extends Interaction {
     Util.each(children, child => {
       const originAttrs = child.get('_originAttrs');
       if (originAttrs) {
-        child.__attrs = originAttrs;
+        child._attrs = originAttrs;
         child.set('_originAttrs', null);
       }
       child.set('_selected', false);

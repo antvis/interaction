@@ -211,7 +211,7 @@ class Brush extends Interaction {
             })
           });
         } else {
-          !brushShape.get('destroyed') && brushShape.attr(Util.mix({}, brushShape.__attrs, {
+          !brushShape.get('destroyed') && brushShape.attr(Util.mix({}, brushShape._attrs, {
             path: polygonPath
           }));
         }
@@ -227,7 +227,7 @@ class Brush extends Interaction {
             })
           });
         } else {
-          !brushShape.get('destroyed') && brushShape.attr(Util.mix({}, brushShape.__attrs, {
+          !brushShape.get('destroyed') && brushShape.attr(Util.mix({}, brushShape._attrs, {
             x: rectStartX,
             y: rectStartY,
             width: rectWidth,
@@ -307,7 +307,7 @@ class Brush extends Interaction {
       if (type === 'POLYGON') {
         polygonPath += 'z';
 
-        brushShape && !brushShape.get('destroyed') && brushShape.attr(Util.mix({}, brushShape.__attrs, {
+        brushShape && !brushShape.get('destroyed') && brushShape.attr(Util.mix({}, brushShape._attrs, {
           path: polygonPath
         }));
         me.polygonPath = polygonPath;
