@@ -1,4 +1,4 @@
-const CommonUtil = require('@antv/util/src');
+const CommonUtil = require('@antv/util/lib');
 
 const Util = {
 };

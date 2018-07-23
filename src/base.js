@@ -1,5 +1,5 @@
-const G = require('@antv/g/src');
-const EventUtil = require('@antv/util/src/event');
+const G = require('@antv/g/lib');
+const EventUtil = require('@antv/util/lib/event');
 const DomUtil = G.DomUtil;
 const CommonUtil = G.CommonUtil;
 
