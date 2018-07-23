@@ -1,6 +1,6 @@
 {
   "name": "@antv/interaction",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "interaction plugins for AntV products",
   "browser": "build/interaction.js",
   "main": "build/interaction.js",
@@ -90,7 +90,7 @@
     "silent": false
   },
   "dependencies": {
-    "@antv/g": "^3.0.0-beta.10",
-    "@antv/util": "~1.0.10"
+    "@antv/g": "^3.0.0-beta.11",
+    "@antv/util": "~1.0.11"
   }
 }
